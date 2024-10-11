@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://t1fqj5exbc6l"]
+
+[ext_resource type="Script" path="res://scenes/manager/GridManager.cs" id="1_b3lbh"]
+
+[node name="GridManager" type="Node"]
+script = ExtResource("1_b3lbh")
