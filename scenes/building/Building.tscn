@@ -1,11 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://s7j0f3mv5i3l"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_doqrn"]
-size = Vector2(64, 64)
+[ext_resource type="Texture2D" uid="uid://cdfc0wvockn5q" path="res://assets/buildings/tower_blue.png" id="1_eae2p"]
 
 [node name="Building" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.210537, 0.543374, 0.323149, 1)
-texture = SubResource("PlaceholderTexture2D_doqrn")
+texture = ExtResource("1_eae2p")
 centered = false
+offset = Vector2(-32, -164)
