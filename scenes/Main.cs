@@ -7,22 +7,28 @@ public partial class Main : Node
 {
 	private GridManager gridManager;
 	private Sprite2D cursor;
-	private PackedScene buildingScene;
-	private Button placeBuildingButton;
+	private PackedScene towerScene;
+	private PackedScene villageScene;
+	private Button placeTowerButton;
+	private Button placeVillageButton;
 	private Node2D ySortRoot;
 	private Vector2I? hoveredGridCell;
+	private PackedScene toPlaceBuildingScene;
 
 	public override void _Ready()
 	{
-		buildingScene = GD.Load<PackedScene>("res://scenes/building/Building.tscn");
+		towerScene = GD.Load<PackedScene>("res://scenes/building/Tower.tscn");
+		villageScene = GD.Load<PackedScene>("res://scenes/building/Village.tscn");
 		gridManager = GetNode<GridManager>("GridManager");
 		cursor = GetNode<Sprite2D>("Cursor");
-		placeBuildingButton = GetNode<Button>("PlaceBuildingButton");
+		placeTowerButton = GetNode<Button>("PlaceTowerButton");
+		placeVillageButton = GetNode<Button>("PlaceVillageButton");
 		ySortRoot = GetNode<Node2D>("YSortRoot");
 
 		cursor.Visible = false;
 
-		placeBuildingButton.Pressed += OnButtonPressed;
+		placeTowerButton.Pressed += OnPlaceBuildingButtonPressed;
+		placeVillageButton.Pressed += OnPlaceVillageButtonPressed;
 	}
 
 	public override void _UnhandledInput(InputEvent evt)
@@ -52,7 +58,7 @@ public partial class Main : Node
 			return;
 		}
 
-		var building = buildingScene.Instantiate<Node2D>();
+		var building = toPlaceBuildingScene.Instantiate<Node2D>();
 		ySortRoot.AddChild(building);
 
 		building.GlobalPosition = hoveredGridCell.Value * 64;
@@ -62,8 +68,16 @@ public partial class Main : Node
 
 	}
 
-	private void OnButtonPressed()
+	private void OnPlaceBuildingButtonPressed()
 	{
+		toPlaceBuildingScene = towerScene;
+		cursor.Visible = true;
+		gridManager.HighlightBuildableTiles();
+	}
+
+	private void OnPlaceVillageButtonPressed()
+	{
+		toPlaceBuildingScene = villageScene;
 		cursor.Visible = true;
 		gridManager.HighlightBuildableTiles();
 	}
