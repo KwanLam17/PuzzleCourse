@@ -9,6 +9,8 @@ namespace Game.Manager;
 
 public partial class GridManager : Node
 {
+	private const string IS_BUILDABLE = "is_buildable";
+	private const string IS_WOOD = "is_wood";
 	private HashSet<Vector2I> validBuildableTiles = new();
 
 	[Export]
@@ -29,7 +31,7 @@ public partial class GridManager : Node
 		{
 			var customData = layer.GetCellTileData(tilePosition);
 			if (customData == null) continue;
-			return (bool)customData.GetCustomData("buildable");
+			return (bool)customData.GetCustomData(IS_BUILDABLE);
 		}
 
 		return false;
