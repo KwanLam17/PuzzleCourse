@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://c0rowj6prt5jb"]
+[gd_scene load_steps=9 format=4 uid="uid://c0rowj6prt5jb"]
 
 [ext_resource type="Script" path="res://scenes/Main.cs" id="1_gl3h0"]
 [ext_resource type="TileSet" uid="uid://de3jb4c1kdqyq" path="res://resources/tiles.tres" id="2_077fm"]
+[ext_resource type="PackedScene" uid="uid://d2fhcb6r43v2b" path="res://scenes/manager/BuildingManager.tscn" id="2_cy5s1"]
 [ext_resource type="PackedScene" uid="uid://t1fqj5exbc6l" path="res://scenes/manager/GridManager.tscn" id="2_nv34q"]
 [ext_resource type="TileSet" uid="uid://c6anjckl4n8pj" path="res://resources/highlight_tileset.tres" id="2_qdvck"]
 [ext_resource type="PackedScene" uid="uid://dwx48gd15w04c" path="res://scenes/building/Base.tscn" id="3_0ecqj"]
@@ -12,6 +13,12 @@ size = Vector2(64, 64)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gl3h0")
+
+[node name="BuildingManager" parent="." node_paths=PackedStringArray("gridManager", "gameUI", "ySortRoot", "cursor") instance=ExtResource("2_cy5s1")]
+gridManager = NodePath("../GridManager")
+gameUI = NodePath("../GameUI")
+ySortRoot = NodePath("../YSortRoot")
+cursor = NodePath("../Cursor")
 
 [node name="GridManager" parent="." node_paths=PackedStringArray("highlightTileMapLayer", "baseTerrainTileMapLayer") instance=ExtResource("2_nv34q")]
 highlightTileMapLayer = NodePath("../HighlightTileMapLayer")

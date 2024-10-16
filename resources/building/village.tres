@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_yidsc")
 DisplayName = "Village"
+ResourceCost = 3
 BuildableRadius = 0
 ResourceRadius = 3
 BuildingScene = ExtResource("1_gnequ")
