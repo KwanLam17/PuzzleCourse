@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://digkvlr5s8i7v"]
+[gd_scene load_steps=2 format=3 uid="uid://cofa5ynjq7hcv"]
 
 [ext_resource type="Script" path="res://scenes/building/BuildingGhost.cs" id="1_qly2v"]
 

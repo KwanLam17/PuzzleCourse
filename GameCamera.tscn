@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xrq47s6bgcjr"]
+
+[ext_resource type="Script" path="res://GameCamera.cs" id="1_el6ka"]
+
+[node name="GameCamera" type="Camera2D"]
+script = ExtResource("1_el6ka")
