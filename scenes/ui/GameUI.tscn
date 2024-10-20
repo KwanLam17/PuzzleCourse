@@ -4,7 +4,11 @@
 [ext_resource type="Resource" uid="uid://dlscqysoso30b" path="res://resources/building/tower.tres" id="2_1sghj"]
 [ext_resource type="Resource" uid="uid://ddjna1tcspvuk" path="res://resources/building/village.tres" id="3_gdvxn"]
 
-[node name="GameUI" type="MarginContainer"]
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_8i354")
+buildingResources = Array[Object]([ExtResource("3_gdvxn"), ExtResource("2_1sghj")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,10 +18,8 @@ theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
-script = ExtResource("1_8i354")
-buildingResources = Array[Object]([ExtResource("2_1sghj"), ExtResource("3_gdvxn")])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 16
