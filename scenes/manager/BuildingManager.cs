@@ -130,7 +130,7 @@ public partial class BuildingManager : Node
 	{
 		var rootCell = hoveredGridArea.Position;
 		var buildingComponent = GetTree().GetNodesInGroup(nameof(BuildingComponent)).Cast<BuildingComponent>()
-			.FirstOrDefault((buildingComponent) => buildingComponent.GetGridCellPosition() == rootCell);
+			.FirstOrDefault((buildingComponent) => buildingComponent.GetGridCellPosition() == rootCell && buildingComponent.BuildingResource.IsDeletable);
 		if (buildingComponent == null) return;
 
 		currentlyUsedResouceCount -= buildingComponent.BuildingResource.ResourceCost;
