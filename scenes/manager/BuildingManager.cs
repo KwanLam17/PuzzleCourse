@@ -14,6 +14,8 @@ public partial class BuildingManager : Node
 	private readonly StringName ACTION_RIGHT_CLICK = "right_click";
 
 	[Export]
+	private int startingResourceCount = 4;
+	[Export]
 	private GridManager gridManager;
 	[Export]
 	private GameUI gameUI;
@@ -29,7 +31,6 @@ public partial class BuildingManager : Node
 	}
 
 	private int currentResourceCount;
-	private int startingResourceCount = 100;
 	private int currentlyUsedResouceCount;
 	private BuildingResource toPlaceBuildingResource;
 	private Vector2I hoveredGridCell;
