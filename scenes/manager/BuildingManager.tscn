@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2fhcb6r43v2b"]
+[gd_scene load_steps=2 format=3 uid="uid://dhh5p2euvxnvh"]
 
 [ext_resource type="Script" path="res://scenes/manager/BuildingManager.cs" id="1_tt6ji"]
 

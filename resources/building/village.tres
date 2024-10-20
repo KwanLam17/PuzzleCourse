@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bhth0yfxdxke1" path="res://scenes/building/Village.tscn" id="1_gnequ"]
 [ext_resource type="Script" path="res://resources/building/BuildingResource.cs" id="1_yidsc"]
-[ext_resource type="PackedScene" uid="uid://ck2s2n7hivgvl" path="res://scenes/building/sprite/VillageSprite2D.tscn" id="2_fxly2"]
+[ext_resource type="PackedScene" uid="uid://ck2s2n7hivgvl" path="res://scenes/building/sprite/VillageSprite2D.tscn" id="2_6lbx2"]
 
 [resource]
 script = ExtResource("1_yidsc")
 DisplayName = "Village"
-ResourceCost = 3
+ResourceCost = 2
 BuildableRadius = 0
 ResourceRadius = 3
 BuildingScene = ExtResource("1_gnequ")
-SpriteScene = ExtResource("2_fxly2")
+SpriteScene = ExtResource("2_6lbx2")
