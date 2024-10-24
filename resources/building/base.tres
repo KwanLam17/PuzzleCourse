@@ -9,6 +9,6 @@ DisplayName = ""
 IsDeletable = false
 Dimensions = Vector2i(5, 2)
 ResourceCost = 0
-BuildableRadius = 3
+BuildableRadius = 4
 ResourceRadius = 0
 BuildingScene = ExtResource("1_yon5x")
