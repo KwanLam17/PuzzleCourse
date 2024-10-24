@@ -57,15 +57,7 @@ public partial class GridManager : Node
 
 	public bool isTileAreaBuildable(Rect2I tileArea)
 	{
-		var tiles = new List<Vector2I>();
-		for (int x = tileArea.Position.X; x < tileArea.End.X; x++)
-		{
-			for (int y = tileArea.Position.Y; y < tileArea.End.Y; y++)
-			{
-				tiles.Add(new Vector2I(x, y));
-			}
-		}
-
+		var tiles = tileArea.ToTiles();
 		if (tiles.Count == 0) return false;
 
 		(TileMapLayer firstTileMaplayer, _) = GetTileCustomData(tiles[0], IS_BUILDABLE);
