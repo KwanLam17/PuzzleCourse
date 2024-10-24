@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2ok3djfs5vg7"]
+[gd_scene load_steps=6 format=3 uid="uid://b2ok3djfs5vg7"]
 
 [ext_resource type="Script" path="res://scenes/ui/GameUI.cs" id="1_8i354"]
 [ext_resource type="Resource" uid="uid://dlscqysoso30b" path="res://resources/building/tower.tres" id="2_1sghj"]
 [ext_resource type="Resource" uid="uid://ddjna1tcspvuk" path="res://resources/building/village.tres" id="3_gdvxn"]
+[ext_resource type="Texture2D" uid="uid://e30s1vswcr80" path="res://assets/ui/carved_nine_slides.png" id="5_qgm18"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_psj5u"]
+texture = ExtResource("5_qgm18")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+region_rect = Rect2(0, 0, 192, 192)
 
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_8i354")
@@ -19,7 +28,17 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 16
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="BuildingButton" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_psj5u")
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/BuildingButton"]
+layout_mode = 2
+text = "Place Building"

@@ -7,8 +7,10 @@
 [resource]
 script = ExtResource("1_6wmu7")
 DisplayName = "Tower"
+IsDeletable = true
+Dimensions = Vector2i(2, 2)
 ResourceCost = 3
-BuildableRadius = 3
+BuildableRadius = 4
 ResourceRadius = 0
 BuildingScene = ExtResource("1_8osjq")
 SpriteScene = ExtResource("2_bh44e")
